@@ -1,0 +1,19 @@
+{
+  "name": "apollo-server",
+  "version": "1.0.0",
+  "description": "Make graph ql server with apollo",
+  "main": "index.js",
+  "author": "June",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^2.19.1",
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10"
+  },
+  "scripts": {
+    "build": "babel src -d dist"
+  }
+}
