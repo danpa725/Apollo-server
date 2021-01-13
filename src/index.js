@@ -1,3 +1,25 @@
-import { gql } from "apollo-server";
+const { ApolloServer, gql } = require("apollo-server");
 
-const typeDefs = gql``;
+const resolvers = require("./graphql/resolver");
+
+const typeDefs = gql`
+    type Movie {
+        id: Int!
+        title: String!
+        rating: Float!
+        summary: String!
+        language: String!
+        medium_cover_image: String
+    }
+
+    type Query {
+        movies(limit: Int, rating: Float): [Movie]!
+        movie(title: String!): Movie
+    }
+`;
+
+const server = new ApolloServer({ typeDefs, resolvers });
+
+server.listen().then(({ url }) => {
+    console.log(`🚀  Server ready at ${url}`);
+});
