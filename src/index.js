@@ -10,6 +10,7 @@ const typeDefs = gql`
         summary: String!
         language: String!
         medium_cover_image: String
+        description_intro: String
     }
 
     type Query {
