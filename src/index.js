@@ -14,7 +14,7 @@ const typeDefs = gql`
 
     type Query {
         movies(limit: Int, rating: Float): [Movie]!
-        movie(title: String!): Movie
+        movie(id: Int!): Movie
     }
 `;
 
