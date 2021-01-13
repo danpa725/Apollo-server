@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 
 const API_URL = "https://yts.mx/api/v2/list_movies.json";
 

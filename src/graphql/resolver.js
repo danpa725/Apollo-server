@@ -1,4 +1,4 @@
-const getMovies = require("./db/db");
+const getMovies = require("../db/db");
 
 const resolvers = {
     Query: {
