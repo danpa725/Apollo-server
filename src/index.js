@@ -7,16 +7,19 @@ const typeDefs = gql`
         id: Int!
         title: String!
         rating: Float!
-        summary: String!
+        runtime: Int!
         language: String!
         medium_cover_image: String
-        description_intro: String
+        summary: String!
+        description_full: String!
     }
 
     type Query {
         movies(limit: Int, rating: Float): [Movie]!
         movie(id: Int!): Movie
     }
+
+    # movie가 작동 안함 이유를 찾아보자!
 `;
 
 const server = new ApolloServer({ typeDefs, resolvers });

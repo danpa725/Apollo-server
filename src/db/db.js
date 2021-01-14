@@ -15,8 +15,18 @@ const getMovies = async (limit, rating) => {
     const result = await axios.get(REQUEST_URL);
 
     const { movies } = result.data.data;
-
     return movies;
 };
 
-module.exports = getMovies;
+const getMovie = async (id) => {
+    const result = await axios.get(API_URL);
+
+    const { movies } = result.data.data;
+
+    const cleanedMovies = movies.filter((movie) => movie.id === id);
+
+    return cleanedMovies[0];
+};
+
+exports.getMovies = getMovies;
+exports.getMovie = getMovie;
