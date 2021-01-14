@@ -10,6 +10,8 @@ const typeDefs = gql`
         runtime: Int!
         language: String!
         medium_cover_image: String
+        large_cover_image: String
+        background_image: String
         summary: String!
         description_full: String!
     }
@@ -18,8 +20,6 @@ const typeDefs = gql`
         movies(limit: Int, rating: Float): [Movie]!
         movie(id: Int!): Movie
     }
-
-    # movie가 작동 안함 이유를 찾아보자!
 `;
 
 const server = new ApolloServer({ typeDefs, resolvers });
